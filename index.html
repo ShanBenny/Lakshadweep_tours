@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectDweep - Discover Paradise on Earth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="logo">
+            <img src="images/connectdweep.jpg">
+            <h1>ConnectDweep</h1>
+            <p>Discover Paradise on Earth</p>
+        </div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> <!-- Hamburger icon -->
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#accommodation">Accommodation</a></li>
+                <li><a href="#travel-info">Travel Info</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+           
+            <h1>Welcome to ConnectDweep</h1>
+            <p>Your gateway to unparalleled holiday experiences.</p>
+            <a href="#packages" class="cta-button">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At ConnectDweep, we are committed to providing unforgettable holiday experiences in the pristine islands of Lakshadweep. Our mission is to ensure every moment is filled with adventure, relaxation, and memories that last a lifetime.</p>
+    </section>
+
+    <!-- Featured Packages Section -->
+    <section id="packages" class="packages">
+        <h2>Featured Packages</h2>
+        <div class="package-grid">
+            <div class="package-card">
+                <img src="images/adventure.jpg" alt="Adventure Package">
+                <h3>Adventure Package</h3>
+                <p>3 Nights / 4 Days | Starting from INR 15000 </p>
+                <a href="package_details.html" class="cta-button">Learn More</a>
+            </div>
+            <div class="package-card">
+                <img src="images/relaxation.jpg" alt="Relaxation Package">
+                <h3>Relaxation Package</h3>
+                <p>5 Nights / 6 Days | Starting from INR 23,152</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+    <style>
+        /* Popup Modal Styles */
+        .offer-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 9999;
+        }
+
+        .modal-content {
+            position: relative;
+            background: linear-gradient(135deg, #0099ff, #0066cc);
+            color: white;
+            width: 90%;
+            max-width: 400px;
+            margin: 15% auto;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .offer-price {
+            font-size: 2.5em;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .buy-now-btn {
+            background: #ffd700;
+            color: #003366;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 10px;
+        }
+
+        .buy-now-btn:hover {
+            transform: scale(1.05);
+            background: #ffdf33;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your existing website content -->
+
+    <!-- Offer Popup -->
+    <div id="offerModal" class="offer-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeOffer()">&times;</span>
+            <h2>Exclusive Limited Time Offer! ⚡</h2>
+            <div class="offer-price">₹13,500/-</div>
+            <p>Experience Lakshadweep's Paradise with:</p>
+            <ul style="text-align: left; list-style-type: none;">
+                <li>✓ 4 Days/3 Nights Stay</li>
+                <li>✓ All Meals Included</li>
+                <li>✓ Island Hopping Tours</li>
+                <li>✓ Water Sports Activities</li>
+            </ul>
+            <button class="buy-now-btn" onclick="redirectToBooking()">GRAB THIS DEAL NOW</button>
+            <p style="font-size:0.9em; margin-top:15px;">Offer valid for next 24 hours only</p>
+        </div>
+    </div>
+
+    <script>
+        // Show modal when page loads
+        window.onload = function() {
+            document.getElementById('offerModal').style.display = 'block';
+        };
+
+        // Close modal
+        function closeOffer() {
+            document.getElementById('offerModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('offerModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Redirect to booking page
+        function redirectToBooking() {
+            window.location.href = '#contact'; // Update with your booking page URL
+            closeOffer();
+        }
+    </script>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="activities">
+        <h2>Popular Activities</h2>
+        <div class="activity-grid">
+            <div class="activity-card">
+                <img src="/images/Snorkeling.png" alt="Snorkeling">
+                <h3>Snorkeling</h3>
+                <p>Explore the vibrant underwater world of Lakshadweep.</p>
+            </div>
+            <div class="activity-card">
+                <img src="/images/IMG-20250206-WA0060.jpg" alt="Scuba Diving">
+                <h3>Scuba Diving</h3>
+                <p>Dive into the crystal-clear waters and discover marine life.</p>
+            </div>
+            <div class="activity-card">
+                <img src="/images/IMG-20250206-WA0059.jpg" alt="Island Hopping">
+                <h3>Island Hopping</h3>
+                <p>Visit multiple islands and experience their unique charm.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation Section -->
+    <section id="accommodation" class="accommodation">
+        <h2>Accommodation Options</h2>
+        <div class="accommodation-grid">
+            <div class="accommodation-card">
+                <img src="/images/luxury.png" alt="Luxury Resorts">
+                <h3>Luxury Resorts</h3>
+                <p>Experience world-class amenities and breathtaking views.</p>
+            </div>
+            <div class="accommodation-card">
+                <img src="/images/budget quest house.png" alt="Budget Guesthouses">
+                <h3>Budget Guesthouses</h3>
+                <p>Comfortable and affordable stays for every traveler.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Information Section -->
+    <section id="travel-info" class="travel-info">
+        <h2>Travel Information</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Getting There</h3>
+                <p>Flights and ferries to Lakshadweep are available from major cities.</p>
+            </div>
+            <div class="info-card">
+                <h3>Best Time to Visit</h3>
+                <p>October to March is the ideal time to visit Lakshadweep.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <h2>Latest from Our Blog</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="image.png" alt="Top 5 Beaches">
+                <h3>Top 5 Beaches in Lakshadweep</h3>
+                <p>Discover the most stunning beaches in the islands.</p>
+            </div>
+            <div class="blog-card">
+                <img src="images/culture.jpeg" alt="Local Culture">
+                <h3>Local Culture and Traditions</h3>
+                <p>Learn about the rich cultural heritage of Lakshadweep.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <link href="contact.html">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ConnectDweep. All rights reserved.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
