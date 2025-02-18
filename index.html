@@ -11,10 +11,11 @@
     <!-- Header and Navigation -->
     <header>
         <div class="logo">
-            <img src="images/connectdweep.jpg">
+            <img src="/images/connectdweep.jpg">
             <h1>ConnectDweep</h1>
             <p>Discover Paradise on Earth</p>
         </div>
+        
         <nav>
             <div class="hamburger" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i> <!-- Hamburger icon -->
@@ -28,6 +29,7 @@
                 <li><a href="#travel-info">Travel Info</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="logout-button">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -53,13 +55,13 @@
         <h2>Featured Packages</h2>
         <div class="package-grid">
             <div class="package-card">
-                <img src="images/adventure.jpg" alt="Adventure Package">
+                <img src="/images/adventure.jpeg" alt="Adventure Package">
                 <h3>Adventure Package</h3>
                 <p>3 Nights / 4 Days | Starting from INR 15000 </p>
                 <a href="package_details.html" class="cta-button">Learn More</a>
             </div>
             <div class="package-card">
-                <img src="images/relaxation.jpg" alt="Relaxation Package">
+                <img src="/images/relaxation.jpeg" alt="Relaxation Package">
                 <h3>Relaxation Package</h3>
                 <p>5 Nights / 6 Days | Starting from INR 23,152</p>
                 <a href="#" class="cta-button">Learn More</a>
@@ -129,7 +131,6 @@
     </style>
 </head>
 <body>
-    <!-- Your existing website content -->
 
     <!-- Offer Popup -->
     <div id="offerModal" class="offer-modal">
@@ -241,7 +242,7 @@
                 <p>Discover the most stunning beaches in the islands.</p>
             </div>
             <div class="blog-card">
-                <img src="images/culture.jpeg" alt="Local Culture">
+                <img src="/images/culture.jpeg" alt="Local Culture">
                 <h3>Local Culture and Traditions</h3>
                 <p>Learn about the rich cultural heritage of Lakshadweep.</p>
             </div>
@@ -255,8 +256,11 @@
             <link href="contact.html">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
+            
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
             <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="cta-button">Send Message</button>
+            <a href="sendmessage.html" class="cta-button">Send Message</a>
+            <a href="thankyou.html" class="cta-button">Logout</a>
         </form>
         <div class="social-links">
             <a href="#"><i class="fab fa-facebook"></i></a>
@@ -264,6 +268,7 @@
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
     </section>
+    
 
     <!-- Footer -->
     <footer>
@@ -274,6 +279,13 @@
             const navLinks = document.getElementById("nav-links");
             navLinks.classList.toggle("active");
         }
+        document.addEventListener('click', function(event) {
+        const nav = document.querySelector('nav');
+        const hamburger = document.querySelector('.hamburger');
+        if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
+            document.getElementById('nav-links').classList.remove('active');
+        }
+    });
     </script>
 </body>
 </html>
